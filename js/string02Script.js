@@ -6,9 +6,9 @@ var trim = str03.trim();
 var splitcommas = "a,b, c,|d, e";
 var splitspaces = "a,b, c,|d, e";
 var splitsign = "a,b, c,|d, e";
-splitcommas.split(","); // Split on commas
-splitspaces.split(" "); // Split on spaces
-splitsign.split("|");
+splitcommas = splitcommas.split(","); // Split on commas
+splitspaces = splitspaces.split(" "); // Split on spaces
+splitsign = splitsign.split("|");
 
 document.getElementById("demo06").innerHTML = trim;
 document.getElementById("demo07").innerHTML = splitcommas[0];

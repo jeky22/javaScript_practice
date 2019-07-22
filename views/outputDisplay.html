@@ -2,19 +2,38 @@
 <html lang="en">
 
 <head>
-    <script src="./js/outputScript.js"></script>
+    <script src="../js/outputScript.js"></script>
 </head>
 
 <body>
-    <!-- 
-    <p id="demo"> Hello World!</p>
-    <script>
-        document.getElementById("demo").innerHTML = 5+10;
-    </script>
-    <button type="button" onclick="document.write(5 + 6)">Try it</button>
+    <!-- Output 01 -->
+    <!--     
+        <p id="demo"> Hello World!</p>
+        <script>
+            document.getElementById("demo").innerHTML = 5+10;
+        </script>
+        <button type="button" onclick="document.write(5 + 6)">Try it</button>
 
-    <script>window.alert(5 + 6);
+        <script>window.alert(5 + 6);
+        </script>
+
+        <script>
+            console.log(5 + 7);
+        </script> 
+    -->
+
+    <!-- Output 02 -->
+    <h2>My First JavaScript</h2>
+    <button type="button" onclick="document.getElementById('demo01').innerHTML = Date()">
+        Click me to display date and Time.
+    </button>
+    <p id="demo01"></p>
+
+    <script>
+        window.alert(5 + 6);
     </script>
+
+    <p id="demo02"></p>
 
     <script>
         console.log(5 + 7);
@@ -31,6 +50,7 @@
     <script>
         window.alert(5 + 6);
     </script>
+
     <p id="demo01"></p>
     <script>
         var x, y, z; x = 5; y = 6; z = x + y;

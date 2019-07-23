@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event</title>
+    <script>
+        function myFunction() {
+            var greeting;
+            var time = new Date().getHours(); // 현재 시간만 리턴
+
+            if(time < 10) {
+                greeting = "Good morning";
+            } else if (time < 20) {
+                greeting = "Good day";
+            } else {
+                greeting = "Good evening";
+            }
+
+            document.getElementById("demo").innerHTML = greeting;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+</body>
+</html>

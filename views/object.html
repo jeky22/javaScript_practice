@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -15,22 +16,26 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Variable & Object</title>
 </head>
+
 <body>
     <script>
         var name = "Ali";
         var money;
-        money = 2000.50;        
+        console.log("before type of money: "+ typeof (money));
+        money = 2000.50;
+        console.log("after type of money: "+ typeof (money));
 
         var myVar = "global";
 
         function checkscope() {
             var myVar = "local";
             document.write(myVar + "<br>");
-            document.write(typeof(3 + 4));
+            document.write(typeof (3 + 4));
         }
 
         // 함수 호출
         checkscope();
     </script>
 </body>
+
 </html>

@@ -16,60 +16,102 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script>
         function modifySmall() {
-            console.log(typeof (document.getElementById("sm").innerText))
-            document.getElementById("sm").innerHTML
+            var text;
+            var lg_value;
+
+            lg_value = document.getElementById("lg").value;
+            for (i = 1; i < 5; i++) {
+                text += "<option value=" + i + ">" + lg_value + "." + i + "</option>";
+            }
+            document.getElementById("sm").innerHTML = text;
 
         }
-        function validateform() {
-            console.log("hi");
-            var name = ["f","l","u","c","s","z"];
-            for (tmp in name) {
-                var password = document.myform.tmp.value;
-                if ((tmp).length>6) {
-                    var docForm = document.myform;
-                    return true;
-                }
-                else {
-                    var strvalidation = "get error";
-                }
-                document.getElementById(tmp).innerHTML = strvalidation;
-                return false;
+        function validateform(val) {
+            for (tmp of ["first","last","user"])
+            {
+            //var first = document.myform.tmp.value;
+           // console.log(document.myform);
+            document.getElementById("label+"+tmp).innerHTML = "sorry";
+            console.log(first)
             }
+            return false;
+
+            if (password.length >= 6 && name != "") {
+                var docForm = document.myform;
+                alert("Name: " + docForm.name.value + "\nPassword: " + docForm.password.value);
+                return true;
+            }
+            else if (password.length < 6) {
+                var strvalidation = "Password must be at least 6 characters long.";
+            }
+            else {
+                var strvalidation = "Name can't be blank";
+            }
+            document.getElementById("demo01").innerHTML = strvalidation;
+            return false;
         }
     </script>
+
+    <style>
+        .form-control {}
+    </style>
 </head>
-<div class="container"><select name="large_class" id="lg" onchange="modifySmall()">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
+<div class="container">
+    <select name="large_class" id="lg" onchange="modifySmall()">
+        <option disabled selected value>대분류 </option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
     </select>
 
     <select name="small_class" id="sm">
+        <option value="">대분류를 선택해주세요</option>
 
     </select>
 
-    <form name="myform" onsubmit="return validateform()">
-        <div class="row">
-            <p id="f"></p>
-            <input type="text" name="f" value="First name">
-            <p id="l"></p>
-            <input type="text" name="l" value="Last name">
-            <p id="u"></p>
-            <input type="text" name="u" value="Username">
+    <form name="myform" onsubmit="return validateform(id)">
+        <div class="row ">
+            <div>
+                <p id="label_first"></p>
+                <input class="form-control m-2 " type="text" name="first" value="first name">
+            </div>
+            <div>
+                <p id="label_last"></p>
+                <input class="form-control m-2 " type="text" name="last" value="last name">
+            </div>
+            <div>
+                <p id="label_user"></p>
+                <input class="form-control m-2" type="text" name="user" value="username">
+            </div>
         </div>
         <div class="row">
-            <p id="c"></p>
-            <input type="text" name="c" value="City">
-            <p id="s"></p>
-            <input type="text" name="s" value="State">
-            <p id="z"></p>
-            <input type="text" name="z" value="Zip">
+            <div>
+                <p id="label_city"></p>
+                <input class="form-control m-2" type="text" name="city" value="city">
+            </div>
+            <div>
+                <p id="label_state"></p>
+                <input class="form-control m-2" type="text" name="state" value="state">
+            </div>
+            <div>
+                <p id="label_zip"></p>
+                <input class="form-control m-2" type="text" name="zip" value="zip">
+            </div>
         </div>
+
+        <!-- <div><label class="text-success">success</label>
+        <input class="form-control is-valid" name="success" >
+        
+        <label class="text-warning">warnings</label>
+        <input class="form-control " name="warnings" >
+        
+        <label class="text-danger">error</label>
+        <input class="form-control is-invalid" name="error" ></div> -->
 
         <label for="">
             <input type="checkbox" name="agree" id="agrree">
         </label>
-        <button type="submit">submit</button>
+        <input type="submit" value="register">
     </form>
 </div>
 

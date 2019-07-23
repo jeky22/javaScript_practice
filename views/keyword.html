@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this Keyword</title>
+    <script>
+        var getElement = function(param) {
+            var innerParam = param;
+            alert(innerParam.value); // value 값을 꺼내준다.
+
+            var docForm = document.myform;
+            alert(docForm.method); // 이름이 myForm인 것 안에 있는 모든 것들 중 method 값을 띄워준다.
+        }
+    </script>
+</head>
+<body>
+    <form name="myform" method="GET">
+        Enter something in the box : <br>
+        <input type="text" name="inputbox" value="Good" onclick="getElement(this);" />
+        <input type="button" name="button" value="ClickButton" onclick="getElement(this);" />
+    </form>
+</body>
+</html>

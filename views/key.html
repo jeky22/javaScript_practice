@@ -13,41 +13,37 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <script>
-            var fruit, text, fLen, i;
-            fruits = ["Banana", "Orange", "Apple", "Mango"];
-            fLen = fruits.length;
-            fruits.sort(); // 배열 안에 원소를 정렬
-            text = "<ul>";
-
-            // for(i = 0; i < fLen; i++) {
-            //     text += "<li>" + fruits[i] + "</li>";
-            // }
-
-            // literal
-            for(var fruit of fruits) {
-                text += "<li>" + fruit + "</li>";
+    <title>Key</title>
+    <script>
+        var person01 = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+        var x = person01.constructor(); // constructor() : 생성자 함수.
+        var person02 = {
+            firstName: "John", lastName : "Doe", 
+            fullName : function(firstVal,secondVal) {
+                return this.firstName + " " + firstVal + " " + secondVal;
             }
+        };
 
-            text += "</ul>";
-        </script>
-    <title>Arrays</title>
+        var txt;
+
+        for(x in person02) {
+            txt += person02[x];
+        }
+    </script>
 </head>
 <body>
     <p id="demo01"></p>
     <p id="demo02"></p>
     <p id="demo03"></p>
     <p id="demo04"></p>
+    <p id="demo05"></p>
 
     <script>
-        document.getElementById("demo01").innerHTML = text;
-        document.getElementById("demo02").innerHTML = fruits.pop(); // pop() 배열의 마지막 요소를 제거 
-
-        var strPush = fruits.push("Kiwi");
-        document.getElementById("demo03").innerHTML = fruits;
-
-        var arraySplice = fruits.splice(0, 2); // 배열의 기존 요소를 삭제하거나 새로운 값으로 교체
-        document.getElementById("demo04").innerHTML = fruits;
+        document.getElementById("demo01").innerHTML = person01.firstName + " is " + person01.age + " years old.";
+        document.getElementById("demo02").innerHTML = person02.nationality = "Korean";
+        document.getElementById("demo03").innerHTML = "person01.age의 삭제 여부 : " + delete person01.age;
+        document.getElementById("demo04").innerHTML = "person01.firstName의 type : " + typeof person01.firstName;
+        document.getElementById("demo05").innerHTML = "constructor() : " + txt;
     </script>
 </body>
 </html>

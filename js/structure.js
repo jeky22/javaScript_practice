@@ -1,3 +1,4 @@
+// Structure
 function myFunction(p1, p2) {
     return p1 * p2;
 }
@@ -10,6 +11,7 @@ function toCelsius(fahrenheit) {
 
 document.getElementById("demo02").innerHTML = toCelsius(77) + " Celsius";
 
+// Call with function
 function concatenate(first, last) {
     var full;
     full = first + last;
@@ -19,5 +21,5 @@ function concatenate(first, last) {
 function secondFunction() {
     var result;
     result = concatenate('Zara', 'Ali');
-    document.getElementById("demo03").innerHTML=result;
+    document.write(result);
 }

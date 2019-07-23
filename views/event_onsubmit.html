@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function validateform() {
+            var password = document.myform.password.value;
+            var name = document.myform.name.value;
+
+            if (password.length >= 6 && name != "") {
+                var docForm = document.myform;
+                alert("Name: " + docForm.name.value + "\nPassword: " + docForm.password.value);
+                return true;
+            }
+            else if (password.length < 6) {
+                var strvalidation = "Password must be at least 6 characters long.";
+            }
+            else {
+                var strvalidation = "Name can't be blank";
+            }
+            document.getElementById("demo01").innerHTML = strvalidation;
+            return false;
+        }
+    </script>
+</head>
+
+<body>
+    <span id="demo01"></span><br>
+    <form name="myform" onsubmit="return validateform()">
+        Name: <input type="text" name="name"><br />
+        Password: <input type="password" name="password"><br />
+        <input type="submit" value="register">
+    </form>
+</body>
+
+</html>

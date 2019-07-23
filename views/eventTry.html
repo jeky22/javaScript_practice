@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+        function modifySmall() {
+            console.log(typeof (document.getElementById("sm").innerText))
+            document.getElementById("sm").innerHTML
+
+        }
+        function validateform() {
+            console.log("hi");
+            var name = ["f","l","u","c","s","z"];
+            for (tmp in name) {
+                var password = document.myform.tmp.value;
+                if ((tmp).length>6) {
+                    var docForm = document.myform;
+                    return true;
+                }
+                else {
+                    var strvalidation = "get error";
+                }
+                document.getElementById(tmp).innerHTML = strvalidation;
+                return false;
+            }
+        }
+    </script>
+</head>
+<div class="container"><select name="large_class" id="lg" onchange="modifySmall()">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+
+    <select name="small_class" id="sm">
+
+    </select>
+
+    <form name="myform" onsubmit="return validateform()">
+        <div class="row">
+            <p id="f"></p>
+            <input type="text" name="f" value="First name">
+            <p id="l"></p>
+            <input type="text" name="l" value="Last name">
+            <p id="u"></p>
+            <input type="text" name="u" value="Username">
+        </div>
+        <div class="row">
+            <p id="c"></p>
+            <input type="text" name="c" value="City">
+            <p id="s"></p>
+            <input type="text" name="s" value="State">
+            <p id="z"></p>
+            <input type="text" name="z" value="Zip">
+        </div>
+
+        <label for="">
+            <input type="checkbox" name="agree" id="agrree">
+        </label>
+        <button type="submit">submit</button>
+    </form>
+</div>
+
+<body>
+
+
+</body>
+
+</html>

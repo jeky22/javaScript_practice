@@ -18,56 +18,31 @@
 <body>
     <h5>크기 비교 Function 만들기</h5>
     <p id="demo01"></p>
+    <form onsubmit="return f_compare()" name="myform">
+        Num1: <input type="text" name="num1" id="num1" /> <br>
+        Num2: <input type="text" name="num2" id="num2" /> <br>
+        <input type="submit" value="register" />
+    </form>
+    <br>
+
     <h5>동일 단어 제외 문장 출력 function 만들기 : str 값 변화 없음.</h5>
     <p id="demo02"></p>
     <p id="demo03"></p>
+    <form onsubmit="return f_subStringWithText(word.value)" name="myform2">
+        Word1: <input type="text" name="word" id="world" /> <br>
+        <input type="submit" value="register" />
+    </form>
+    <br>
+
     <h5>문자 위치 바꾸는 Function 만들기 : str 값 변화 없음.</h5>
+    <p>'HTML element CSS'</p>
     <p id="demo04"></p>
-    <p id="demo05"></p>
-
-    <script>
-        // 크기비교 function 만들기
-        function f_compare(num1, num2) {
-            if(num1 <= num2) {
-                return num2;
-            } else {
-                return num1;
-            }
-        }
-
-        document.getElementById("demo01").innerHTML = "output: " + f_compare(20, 50);
-
-
-        // 동일 단어 제외 문장 출력 function 만들기 : str 값 변화 없음.
-        var str1 = 'HTML element has been changed';
-
-        function f_subStringWithText(str1, same) {
-            same = str1.substring(str1.indexOf(same), str1.indexOf(same) + same.length);
-            return same;
-        }
-
-        document.getElementById("demo02").innerHTML = "output: " + f_subStringWithText(str1, 'been');
-        document.getElementById("demo03").innerHTML = "output: " + f_subStringWithText(str1, 'element');
-
-
-        // 문자 위치 바꾸는 function 만들기 : str 값 변화 없음.
-        var str2 = 'HTML element CSS';
-        var temp;
-
-        function f_getTestAndreplace(str2, c, h) {
-            c = str2.substring(str2.indexOf(c), str2.indexOf(c) + c.length);
-            h = str2.substring(str2.indexOf(h), str2.indexOf(h) + h.length);
-
-            temp = c;
-            c = h;
-            h = temp;
-            var str3 = c.concat(" element " + h);
-
-            return str3;
-        }
-
-        document.getElementById("demo04").innerHTML = f_getTestAndreplace(str2, 'HTML', 'CSS');
-        document.getElementById("demo05").innerHTML = f_getTestAndreplace(str2, 'CSS', 'HTML');
-    </script>
+    <form onsubmit="return f_getTextAndreplace(change1.value, change2.value)" name="myform3">
+        change1: <input type="text" name="change1" id="chg1" /> <br>
+        change2: <input type="text" name="change2" id="chg2" /> <br>
+        <input type="submit" value="register" />
+    </form>
+    
+    <script src="../js/functionTry.js"></script>
 </body>
 </html>

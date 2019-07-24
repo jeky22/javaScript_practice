@@ -48,25 +48,43 @@
                 document.getElementById("label_first").innerHTML = msg;
                 tmp = false;
             }
+            else {
+                document.getElementById("label_first").innerHTML = postive_msg;
+            }
+
             if (last.length < 6) {
                 document.getElementById("label_last").innerHTML = msg;
                 tmp = false;
+            } else {
+                document.getElementById("label_last").innerHTML = postive_msg;
             }
+
             if (user.length < 6) {
                 document.getElementById("label_user").innerHTML = msg;
                 tmp = false;
+            } else {
+                document.getElementById("label_user").innerHTML = postive_msg;
             }
+
             if (city.length < 6) {
                 document.getElementById("label_city").innerHTML = msg;
                 tmp = false;
+            } else {
+                document.getElementById("label_city").innerHTML = postive_msg;
             }
+
             if (state.length < 6) {
                 document.getElementById("label_state").innerHTML = msg;
                 tmp = false;
+            } else {
+                document.getElementById("label_state").innerHTML = postive_msg;
             }
+
             if (zip.length < 6) {
                 document.getElementById("label_zip").innerHTML = msg;
                 tmp = false;
+            } else {
+                document.getElementById("label_zip").innerHTML = postive_msg;
             }
 
             console.log("hoi");
@@ -96,34 +114,34 @@
     <form name="myform" onsubmit="return validateform()">
         <div class="row ">
             <div class="col-md-4 mb-3">
-                <input class="form-control m-2 " type="text" name="first" value="first name">
+                <input class="form-control m-2 " type="text" name="first" placeholder="first name">
                 <p id="label_first">
                 </p>
             </div>
             <div class="col-md-4 mb-3">
-                <input class="form-control m-2 " type="text" name="last" value="last name">
+                <input class="form-control m-2 " type="text" name="last" placeholder="last name">
                 <div id="label_last">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
-                <input class="form-control m-2" type="text" name="user" value="username">
+                <input class="form-control m-2" type="text" name="user" placeholder="username">
                 <div id="label_user">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-md-4 mb-3">
-                <input class="form-control m-2" type="text" name="city" value="city">
+                <input class="form-control m-2" type="text" name="city" placeholder="city">
                 <div id="label_city">
                 </div>
             </div>
             <div class="col-md-4 mb-3">
 
-                <input class="form-control m-2" type="text" name="state" value="state">
+                <input class="form-control m-2" type="text" name="state" placeholder="state">
                 <div id="label_state"> </div>
             </div>
             <div class="col-md-4 mb-3">
-                <input class="form-control m-2" type="text" name="zip" value="zip">
+                <input class="form-control m-2" type="text" name="zip" placeholder="zip">
                 <div id="label_zip"> </div>
             </div>
         </div>

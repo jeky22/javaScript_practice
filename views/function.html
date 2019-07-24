@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
 <head>
     <meta charset="UTF-8">
@@ -30,4 +31,54 @@
         document.getElementById("demo01").innerHTML = living('Korea', 'Pangyo');
     </script>
 
+=======
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Function</title>
+</head>
+<body>
+    <p id="demo01"></p>
+    <p id="demo02"></p>
+    <p id="demo03"></p>
+
+    <script>
+        // Arrow
+        var hello;
+        hello = (val) => "Hello" + val;
+        document.getElementById("demo01").innerHTML = hello(" Universe!");
+
+        // Other Call Way
+        var person = {
+            fullName: function(city, country) {
+                return this.firstName + " " + this.lastName + ", " + city + ", " + country;
+            }
+        }
+
+        var person01 = {
+            firstName : "John", lastName : "Doe"
+        }
+
+        // 제일 앞에가 object고 뒤에는 파라미터 값을 넣어준다. (여기서는 파라미터가 2개, 3개일 경우는 뒤에 하나만 더 붙여주면 된다.)
+        var x = person.fullName.call(person01, "Oslo", "Norway");
+        document.getElementById("demo02").innerHTML = x;
+
+        var living = function (city, country) {
+            return city + ", " + country;
+        }
+
+        document.getElementById("demo03").innerHTML = living('Pangyo', 'Korea');
+    </script>
+</body>
+>>>>>>> 705103a4108ecf229fe2d6b346af488e76c76393
 </html>

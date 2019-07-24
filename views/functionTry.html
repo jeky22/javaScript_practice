@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>function Try</title>
+</head>
+<body>
+    <h5>크기 비교 Function 만들기</h5>
+    <p id="demo01"></p>
+    <h5>동일 단어 제외 문장 출력 function 만들기 : str 값 변화 없음.</h5>
+    <p id="demo02"></p>
+    <p id="demo03"></p>
+    <h5>문자 위치 바꾸는 Function 만들기 : str 값 변화 없음.</h5>
+    <p id="demo04"></p>
+    <p id="demo05"></p>
+
+    <script>
+        // 크기비교 function 만들기
+        function f_compare(num1, num2) {
+            if(num1 <= num2) {
+                return num2;
+            } else {
+                return num1;
+            }
+        }
+
+        document.getElementById("demo01").innerHTML = "output: " + f_compare(20, 50);
+
+
+        // 동일 단어 제외 문장 출력 function 만들기 : str 값 변화 없음.
+        var str1 = 'HTML element has been changed';
+
+        function f_subStringWithText(str1, same) {
+            same = str1.substring(str1.indexOf(same), str1.indexOf(same) + same.length);
+            return same;
+        }
+
+        document.getElementById("demo02").innerHTML = "output: " + f_subStringWithText(str1, 'been');
+        document.getElementById("demo03").innerHTML = "output: " + f_subStringWithText(str1, 'element');
+
+
+        // 문자 위치 바꾸는 function 만들기 : str 값 변화 없음.
+        var str2 = 'HTML element CSS';
+        var temp;
+
+        function f_getTestAndreplace(str2, c, h) {
+            c = str2.substring(str2.indexOf(c), str2.indexOf(c) + c.length);
+            h = str2.substring(str2.indexOf(h), str2.indexOf(h) + h.length);
+
+            temp = c;
+            c = h;
+            h = temp;
+            var str3 = c.concat(" element " + h);
+
+            return str3;
+        }
+
+        document.getElementById("demo04").innerHTML = f_getTestAndreplace(str2, 'HTML', 'CSS');
+        document.getElementById("demo05").innerHTML = f_getTestAndreplace(str2, 'CSS', 'HTML');
+    </script>
+</body>
+</html>

@@ -1,37 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Event</title>
-   
-</head>
-
-<body>
-    <p id="demo"></p>
-    <p id="demo01"></p>
-</body>
-<script>
-        var person = {
-            fullName: function (city, country) {
-                return this.firstName + " " + this.lastName + "," + city + "," + country;
-            }
-        }
-        var person1 = {
-            firstName: "John", lastName: "Doe"
-        }
-        var x = person.fullName.call(person1, "Oslo", "Norway");
-        document.getElementById("demo").innerHTML = x;
-        var living = function (city, country) {
-            return city + "," + country;
-        }
-        document.getElementById("demo01").innerHTML = living('Korea', 'Pangyo');
-    </script>
-
-=======
 <head>
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -80,5 +48,4 @@
         document.getElementById("demo03").innerHTML = living('Pangyo', 'Korea');
     </script>
 </body>
->>>>>>> 705103a4108ecf229fe2d6b346af488e76c76393
 </html>

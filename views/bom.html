@@ -9,22 +9,13 @@
 </head>
 
 <body>
-
     <p id="demo"></p>
-    <p id="demo1"></p>
+
     <script>
-        var w = window.innerWidth
-            || document.documentElement.clientWidth
-            || document.body.clientWidth;
-        var h = window.innerHeight
-            || document.documentElement.clientHeight
-            || document.body.clientHeight;
+        var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
         var x = document.getElementById("demo");
         x.innerHTML = "Browser inner window width: " + w + ", height: " + h + ".";
-    </script>
-    <script>
-        document.getElementById("demo1").innerHTML = navigator.onLine;
-
     </script>
 </body>
 

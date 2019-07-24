@@ -2,9 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 
-// app.get('/', (req, res) => res.send('Hello World!'))
-
-app.use(express.static('public')) // 정적인 파일 만들기 - 여기에 해당하는 폴더 이름을 써준다.
+app.use(express.static('public'))
 
 const path = require('path');
 const router = express.Router();

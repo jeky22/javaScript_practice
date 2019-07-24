@@ -25,7 +25,7 @@
 
     <div class="container">
         <h2 class="mt-3">f_compare</h2>
-        <form class="form-row bg-custom" name="myform" onsubmit="return f_compare(a.value,b.value)">
+        <form class="form-row bg-custom" name="myform" onsubmit="return func(this)">
             <div class="form-group col-md-6">
                 <label>compare_A</label>
                 <input type="text" class="form-control" name="a" value="0">
@@ -43,7 +43,7 @@
         </form>
 
         <h2 class="mt-3">f_getTextAndoutput</h2>
-        <form class="form-row bg-custom" name="myform2" onsubmit="return f_getTextAndoutput(a.value,b.value)">
+        <form class="form-row bg-custom" name="myform2" onsubmit="return func(this)">
             <div class="form-group col-md-6">
                 <label>compare_A</label>
                 <input type="text" class="form-control" name="a" value="HTML element has been changed">
@@ -62,7 +62,7 @@
         </form>
 
         <h2 class="mt-3">f_getTextAndreplace</h2>
-        <form class="form-row border bg-custom" name="myform3" onsubmit="return f_getTextAndreplace(str.value,a.value,b.value)">
+        <form class="form-row border bg-custom" name="myform3" onsubmit="return func(this)">
             <div class="form-group col-md-6">
                 <label>str</label>
                 <input type="text" class="form-control" name="str" value="CSS element has been changed">

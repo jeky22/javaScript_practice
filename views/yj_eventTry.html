@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="../js/eventTry.js"></script>
+    <title>Event Try</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <form action="/join" onsubmit="return onSubmit()" id="myform" name="myform">
+            <!-- onchange 따른 output : select 사용 -->
+            <div class="row">
+                <div class="form-group col-6">
+                    <p id="demo01"></p>
+                    <label for="mySelect01">대분류</label>
+                    <select class="form-control" id="mySelect01" onchange="selectBox()" name="big">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div class="form-group col-6">
+                    <p id="demo02"></p>
+                    <label for="mySelect02">중분류</label>
+                    <select class="form-control" id="mySelect02" onchange="selectBox()" name="small">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- onsubmit 이용한 입력 오류 표시 -->
+            <div class="form-row">
+                <div class="col-md-4 mb-3">
+                    <label for="firstName">First name</label>
+                    <input type="text" class="form-control is-valid" id="firstName" placeholder="First name" name="firstName">
+                    <div class="valid-feedback" id="demo03"></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="lastName">Last name</label>
+                    <input type="text" class="form-control is-valid" id="lastName" placeholder="Last name" name="lastName">
+                    <div class="valid-feedback" id="demo04"></div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="username">Username</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control is-invalid" id="username" placeholder="Username" name="userName">
+                        <div class="invalid-feedback" id="demo05"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col-md-6 mb-3">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control is-invalid" id="city" placeholder="City" name="city">
+                    <div class="invalid-feedback" id="demo06"></div>
+                </div>
+            <div class="col-md-3 mb-3">
+                <label for="state">State</label>
+                <input type="text" class="form-control is-invalid" id="state" placeholder="State" name="state">
+                <div class="invalid-feedback" id="demo07"></div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="zip">Zip</label>
+                <input type="text" class="form-control is-invalid" id="zip" placeholder="Zip" name="zip">
+                <div class="invalid-feedback" id="demo08"></div>
+            </div>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input is-invalid" type="checkbox" value="" id="chk">
+                    <label class="form-check-label" for="chk">
+                        Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary rounded-pill" type="submit">Submit form</button>
+        </form>
+    </div>
+</body>
+
+</html>

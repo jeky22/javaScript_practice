@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+        function modifySmall() {
+            var text;
+            var lg_value;
+
+            lg_value = document.getElementById("lg").value;
+            for (i = 1; i < 5; i++) {
+                text += "<option value=" + i + ">" + lg_value + "." + i + "</option>";
+            }
+            document.getElementById("sm").innerHTML = text;
+
+        }
+        function validateform() {
+            //     for (tmp of ["first","last","user"])
+            //     {
+            //     //var first = document.myform.tmp.value;
+            //    // console.log(document.myform);
+            //   document.getElementById("label+"+tmp).innerHTML = "sorry";
+            // console.log()
+            // }
+            var first = document.myform.first.value;
+            var last = document.myform.last.value;
+            var user = document.myform.user.value;
+            var city = document.myform.city.value;
+            var state = document.myform.state.value;
+            var zip = document.myform.zip.value;
+            var tmp = true;
+            var msg = "6글자를 넘어야 합니다";
+            var postive_msg = "Looks good!"
+
+            if (first.length < 6) {
+                document.getElementById("label_first").innerHTML = msg;
+                tmp = false;
+            }
+            if (last.length < 6) {
+                document.getElementById("label_last").innerHTML = msg;
+                tmp = false;
+            }
+            if (user.length < 6) {
+                document.getElementById("label_user").innerHTML = msg;
+                tmp = false;
+            }
+            if (city.length < 6) {
+                document.getElementById("label_city").innerHTML = msg;
+                tmp = false;
+            }
+            if (state.length < 6) {
+                document.getElementById("label_state").innerHTML = msg;
+                tmp = false;
+            }
+            if (zip.length < 6) {
+                document.getElementById("label_zip").innerHTML = msg;
+                tmp = false;
+            }
+
+            console.log("hoi");
+            return tmp;
+
+
+        }
+    </script>
+
+    <style>
+        .form-control {}
+    </style>
+</head>
+<div class="container">
+    <select name="large_class" id="lg" onchange="modifySmall()">
+        <option disabled selected value>대분류 </option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+    </select>
+
+    <select name="small_class" id="sm">
+        <option value="">대분류를 선택해주세요</option>
+
+    </select>
+
+    <form name="myform" onsubmit="return validateform()">
+        <div class="row ">
+            <div class="col-md-4 mb-3">
+                <input class="form-control m-2 " type="text" name="first" value="first name">
+                <p id="label_first">
+                </p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <input class="form-control m-2 " type="text" name="last" value="last name">
+                <div id="label_last">
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <input class="form-control m-2" type="text" name="user" value="username">
+                <div id="label_user">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <input class="form-control m-2" type="text" name="city" value="city">
+                <div id="label_city">
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+
+                <input class="form-control m-2" type="text" name="state" value="state">
+                <div id="label_state"> </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <input class="form-control m-2" type="text" name="zip" value="zip">
+                <div id="label_zip"> </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" required>
+                <label class="form-check-label" for="invalidCheck3">
+                    Agree to terms and conditions
+                </label>
+                <div class="invalid-feedback">
+                    You must agree before submitting.
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit form</button>
+
+    </form>
+</div>
+
+<body>
+
+
+</body>
+
+</html>

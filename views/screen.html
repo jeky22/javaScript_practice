@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BOM - ETC</title>
+</head>
+<body>
+    <p id="demo01"></p>
+    <p id="demo02"></p>
+
+    <script>
+        document.getElementById("demo01").innerHTML = "Screen height is " + screen.height + ", Screen width is" + screen.width;
+
+        function goMoving() {
+            window.history.forward(); // window.history.back();
+        }
+
+        document.getElementById("demo02").innerHTML = navigator.onLine();
+    </script>
+</body>
+</html>

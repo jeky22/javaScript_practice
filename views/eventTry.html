@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script>
+        function modifySmall() {
+            var text;
+            var lg_value;
+
+            lg_value = document.getElementById("lg").value;
+            for (i = 1; i < 5; i++) {
+                text += "<option value=" + i + ">" + lg_value + "." + i + "</option>";
+            }
+            document.getElementById("sm").innerHTML = text;
+
+        }
+        function validateform(val) {
+            for (tmp of ["first","last","user"])
+            {
+            //var first = document.myform.tmp.value;
+           // console.log(document.myform);
+            document.getElementById("label+"+tmp).innerHTML = "sorry";
+            console.log(first)
+            }
+            return false;
+
+            if (password.length >= 6 && name != "") {
+                var docForm = document.myform;
+                alert("Name: " + docForm.name.value + "\nPassword: " + docForm.password.value);
+                return true;
+            }
+            else if (password.length < 6) {
+                var strvalidation = "Password must be at least 6 characters long.";
+            }
+            else {
+                var strvalidation = "Name can't be blank";
+            }
+            document.getElementById("demo01").innerHTML = strvalidation;
+            return false;
+        }
+    </script>
+
+    <style>
+        .form-control {}
+    </style>
+</head>
+<div class="container">
+    <select name="large_class" id="lg" onchange="modifySmall()">
+        <option disabled selected value>대분류 </option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+    </select>
+
+    <select name="small_class" id="sm">
+        <option value="">대분류를 선택해주세요</option>
+
+    </select>
+
+    <form name="myform" onsubmit="return validateform(id)">
+        <div class="row ">
+            <div>
+                <p id="label_first"></p>
+                <input class="form-control m-2 " type="text" name="first" value="first name">
+            </div>
+            <div>
+                <p id="label_last"></p>
+                <input class="form-control m-2 " type="text" name="last" value="last name">
+            </div>
+            <div>
+                <p id="label_user"></p>
+                <input class="form-control m-2" type="text" name="user" value="username">
+            </div>
+        </div>
+        <div class="row">
+            <div>
+                <p id="label_city"></p>
+                <input class="form-control m-2" type="text" name="city" value="city">
+            </div>
+            <div>
+                <p id="label_state"></p>
+                <input class="form-control m-2" type="text" name="state" value="state">
+            </div>
+            <div>
+                <p id="label_zip"></p>
+                <input class="form-control m-2" type="text" name="zip" value="zip">
+            </div>
+        </div>
+
+        <!-- <div><label class="text-success">success</label>
+        <input class="form-control is-valid" name="success" >
+        
+        <label class="text-warning">warnings</label>
+        <input class="form-control " name="warnings" >
+        
+        <label class="text-danger">error</label>
+        <input class="form-control is-invalid" name="error" ></div> -->
+
+        <label for="">
+            <input type="checkbox" name="agree" id="agrree">
+        </label>
+        <input type="submit" value="register">
+    </form>
+</div>
+
+<body>
+
+
+</body>
+
+</html>

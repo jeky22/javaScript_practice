@@ -17,24 +17,20 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Call Back Try</title>
     <script>
-        function execFunction01(firstparam) {
-            prefunction(firstparam.name, "first", callbackfunction);
+        function execFunction(firstparam) {
+            prefunction(firstparam.name, callbackfunction);
         };
 
-        function execFunction02(firstparam) {
-            prefunction(firstparam.name, "second", callbackfunction);
-        };
-
-        function prefunction(param02, paramsecond02, callback01) {
+        function prefunction(param02, callback01) {
             console.log("name: " + param02);
 
             if (typeof callback01 == 'function') {
-                callback01(param02, paramsecond02);
+                callback01(param02);
             }
         }
 
-        function callbackfunction(param01, paramsecond01) {
-            console.log(param01 + ", " + paramsecond01);
+        function callbackfunction(param01) {
+            console.log(param01);
             console.log("callback Call");
         }
     </script>
@@ -42,8 +38,8 @@
 
 <body>
     <div class="container d-flex align-items-center">
-        <button type="button" onclick="execFunction01(this)" name="exec Function01" class="btn btn-info mr-2">exec Function01</button> <br>
-        <button type="button" onclick="execFunction02(this)" name="exec Function02" class="btn btn-success">exec Function02</button>
+        <button type="button" onclick="execFunction(this)" name="exec Function01" class="btn btn-info mr-2">exec Function01</button> <br>
+        <button type="button" onclick="execFunction(this)" name="exec Function02" class="btn btn-success">exec Function02</button>
     </div>
 </body>
 

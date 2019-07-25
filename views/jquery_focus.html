@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -16,36 +17,24 @@
 </head>
 
 <body>
-    <h1 id="hh">This is a paragraph. </h1>
     <script>
-        function popUp() {
-            alert("You entered h1!");
-        }
         $(function () {
-            $("#hh").hover(popUp());
-        })
-    </script>
-
-    <p id="test">제이쿼리 hover() 메소드 테스트입니다.</p>
-    <span>마우스를 위 텍스트 위에 올려보세요!</span>
-    <script>
-        $('#test').hover(function () {
-            $(this).css("color", "red");
-        }, function () {
-            $(this).css("color", "blue");
-        });
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            $("button").click(function () {
-                $("#p").hide();
+            $("input").focus(function () {
+                $(this).css("background-color", "grey");
+            });
+            $("input").blur(function () { // focus 후 표시
+                $(this).css("background-color", "green");
+            });
+            $("input").keydown(function () { // focus 후 표시
+                $(this).css("background-color", "red");
+            }); 
+             $("input").keyup(function () { // focus 후 표시
+                $(this).css("background-color", "blue");
             });
         });
-
     </script>
-    <div><p id="p"> This is a paragraph</p>
-    <button>click me</button></div>
+    Name: <input type="text" name="fullname"><br>
+
 
 </body>
 

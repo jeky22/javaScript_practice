@@ -32,7 +32,6 @@ function func(form) {
         case "myform3":
             f_getTextAndreplace(form);
             break;
-
     }
     return false;
 }

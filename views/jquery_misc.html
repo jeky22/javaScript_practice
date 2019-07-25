@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -16,36 +17,35 @@
 </head>
 
 <body>
-    <h1 id="hh">This is a paragraph. </h1>
+    <input type="text" name="" id="input">
+    <table>
+        <tr>
+            <th>Company</th>
+            <th></th>
+            <th>Contury</th>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>Berglunds snabbokip</td>
+            <td></td>
+            <td>Sweden</td>
+        </tr>
+    </table>
+    <input type="checkbox" name="A" id="">
+    <input type="checkbox" name="B" id="">
+    <input type="checkbox" name="C" id="">
     <script>
-        function popUp() {
-            alert("You entered h1!");
-        }
-        $(function () {
-            $("#hh").hover(popUp());
-        })
-    </script>
-
-    <p id="test">제이쿼리 hover() 메소드 테스트입니다.</p>
-    <span>마우스를 위 텍스트 위에 올려보세요!</span>
-    <script>
-        $('#test').hover(function () {
-            $(this).css("color", "red");
-        }, function () {
-            $(this).css("color", "blue");
+        $().ready(function () {
+            $("#input").focus();
+            $(":empty").css("background-color", "purple");
+            $(":focus").css("background-color", "blue");
+            $(":checkbox").wrap("<span style='background-color:red'>");
         });
     </script>
-
-    <script>
-        $(document).ready(function () {
-            $("button").click(function () {
-                $("#p").hide();
-            });
-        });
-
-    </script>
-    <div><p id="p"> This is a paragraph</p>
-    <button>click me</button></div>
 
 </body>
 

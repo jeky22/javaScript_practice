@@ -15,8 +15,11 @@
             alert("You enterd h1!");
         }
 
-        $(document).ready(function() {
+        $(function() {
             $('h1').hover(popUp());
+            $("h1").click(function() {
+                $("h1").hide();
+            });
         });
     </script>
 </body>

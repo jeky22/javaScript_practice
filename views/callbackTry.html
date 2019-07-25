@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
@@ -11,16 +15,20 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Javascript Call Back</title>
+    <title>Call Back Try</title>
     <script>
-        function execFunction(firstparam) {
+        function execFunction01(firstparam) {
+            prefunction(firstparam.name, "first", callbackfunction);
+        };
+
+        function execFunction02(firstparam) {
             prefunction(firstparam.name, "second", callbackfunction);
         };
 
         function prefunction(param02, paramsecond02, callback01) {
-            console.log("param02: " + param02);
+            console.log("name: " + param02);
 
-            if(typeof callback01 == 'function') {
+            if (typeof callback01 == 'function') {
                 callback01(param02, paramsecond02);
             }
         }
@@ -31,7 +39,12 @@
         }
     </script>
 </head>
+
 <body>
-    <button onclick="execFunction(this);" name="exec Function">exec Function</button>
+    <div class="container d-flex align-items-center">
+        <button type="button" onclick="execFunction01(this)" name="exec Function01" class="btn btn-info mr-2">exec Function01</button> <br>
+        <button type="button" onclick="execFunction02(this)" name="exec Function02" class="btn btn-success">exec Function02</button>
+    </div>
 </body>
+
 </html>

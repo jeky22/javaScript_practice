@@ -15,21 +15,28 @@
 
 <body>
     <script>
-        $(function () {
-            $("button").click(function () {
-                $("p").hide(1000, function () {
-                    alert("Example with callback");
+        // $(function () {
+        //     $("button").click(function () {
+        //         $("#div1").fadeToggle();
+        //         $("#div2").fadeToggle("slow");
+        //         $("#div3").fadeToggle(3000);
+        //     });
+        // });
+
+        $(function(){
+            $("button").click(function(){
+                $("#div1").fadeToggle(function(){
+                    $("#div2").fadeToggle("slow",function(){
+                        $("#div3").fadeToggle(3000);
+                    });
                 });
-            });
-            $("h1").click(function () {
-                $("p").show(1000);
-                alert("example without Callback");
             });
         });
     </script>
-    <button class="btn ">Hide</button>
-    <p>This is paragraph with little content.</p>
-    <h1>Here Click</h1>
+    <button>Click to fade out boxes</button><br><br>
+    <div id="div1" style="width:80px;height:80px;background-color:red;"></div><br>
+    <div id="div2" style="width:80px;height:80px;background-color:green;"></div><br>
+    <div id="div3" style="width:80px;height:80px;background-color:blue;"></div>
 </body>
 
 </html>

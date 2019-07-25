@@ -21,6 +21,7 @@ function f_getTextAndreplace(form) {
 }
 
 function func(form) {
+    console.log(form.name)
     switch (form.name) {
         case "myform":
             f_compare(form);

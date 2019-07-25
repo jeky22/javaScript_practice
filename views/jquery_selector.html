@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <title>Syntax</title>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $('p').hide();
+            });
+        });
+
+        // 원래는 이런 형식
+        // var f_template1 = function (param) {
+        //         $('button').click(f_template2);
+        //     };
+
+        //     var f_template2 = function (param) {
+        //         $("p").hide();
+        //     };
+
+        // $(document).ready(f_teamplate1);
+    </script>
+</head>
+<body>
+    <p>This is a paragraph.</p>
+    <button>Click me</button>
+</body>
+</html>

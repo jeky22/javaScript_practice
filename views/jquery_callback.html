@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 최신버전 링크를 걸어야 사용이 가능 -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Call Back</title>
+    <script>
+        // Call Back Method
+        $(function () {
+            $("button").click(function () { // 순서 동작
+                $("p").hide("slow", function () {
+                    alert("Example with Callback");
+                });
+            });
+            $("h1").click(function () { // 시스템 우선순위 동작
+                $("p").show(1000);
+                alert("Example without Callback"); // Call always(Error 시)
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>Hide</button>
+    <p>This is a paragraph with little content.</p>
+    <h1>Here Click</h1>
+</body>
+
+</html>

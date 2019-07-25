@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
@@ -16,20 +19,22 @@
 <body>
     <script>
         $(function () {
-            $("button").click(function () {
-                $("p").hide(1000, function () {
-                    alert("Example with callback");
-                });
-            });
-            $("h1").click(function () {
-                $("p").show(1000);
-                alert("example without Callback");
+            $("p,h2").on({
+                mouseenter: function () {
+                    $(this).css("background-color", "lightgray");
+                },
+                mouseleave: function () {
+                    $(this).css("background-color", "lightblue");
+                },
+                click: function () {
+                    $(this).css("background-color", "yellow");
+                }
             });
         });
     </script>
-    <button class="btn">Hide</button>
-    <p>This is paragraph with little content.</p>
-    <h1>Here Click</h1>
+    <p>Click or move the mouse pointer over this paragraph.</p>
+    <h2>Click or move the mouse pointer over this paragraph.</h2>
+
 </body>
 
 </html>

@@ -17,9 +17,63 @@
 </head>
 <body>
     <div class="container">
-        <form action="/yj_cookieTry">
-            
+        <form name="mylogin" class="pt-5" onsubmit="return setCookie()">
+            <div class="form-group">
+                <p>Username or email address</p>
+                <input type="text" name="email" />
+            </div>
+            <div class="form-group">
+                <p>
+                    <span>Password</span>
+                    <span>Forgot password?</span>
+                </p>
+                <input type="password" name="pwd" />
+            </div>
         </form>
-    </div>
+        <button type="submit" id="loginBtn" name="loginBtn" onclick="setCookie('mylogin.email.value', 'mylogin.pwd.value', 25)">Sign in</button>
+        <!-- <button onclick="getCookie()">getCookie</button> -->
+        </div>
+
+        <script>
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+                var expires = "expires=" + d.toGMTString();
+
+                document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+                alert(document.cookie);
+            }
+
+            function getCookie() {
+                var decodedCookie = decodeURIComponent(document.cookie);
+                var ca = decodedCookie.split(';');
+                alert(ca[0]);
+            }
+
+            // function sendit(){ 
+            //     var email = document.mylogin.email.value;
+            //     var pwd = document.mylogin.pwd.value;
+
+            //     if(email == null || email == "") {
+            //         alert("아이디를 입력해주세요.");
+            //         return false;
+            //     } else if (pwd == null || pwd == "") {
+            //         alert("비밀번호를 입력해주세요.");
+            //         return false
+            //     } 
+
+            //     if(email == true && pwd == true) {
+            //         // 저장할 날짜를 7로 지정해서 쿠키를 7일동안 저장
+            //         setCookie(email, pwd, 7);
+            //     } else {
+            //         // 저장할 날짜를 0으로 지정해서 쿠키 삭제
+            //         setCookie(email, pwd, 0);
+            //     }
+            //     // 검사가 완료되면 서버로 전송
+            //     document.mylogin.submit();
+
+            //     return true;
+            // }
+        </script>
 </body>
 </html>

@@ -45,12 +45,12 @@
             <button class="btn btn-light" id="btnToggle">All Check Toggle</button>
         </div>
         <div class="try">
-            <form action="">
+            <form name="allForm" onsubmit="return tryTable">
                 <table>
                     <tr>
                         <th>Name: </th>
                         <td>
-                            <input type="text" id="name" class="form-control" />
+                            <input type="text" id="name" name="name" class="form-control" />
                         </td>
                     </tr>
                     <tr>
@@ -78,11 +78,13 @@
             <button class="btn btn-light" id="gName">Get Name</button>
             <button class="btn btn-light" id="gComment">Get Comment</button>
             <button class="btn btn-light" id="gCity">Get City</button>
+            <button class="btn btn-primary" id="gAll">Get All</button>
 
             <div id="get">
                 <p id="get1"></p>
                 <p id="get2"></p>
                 <p id="get3"></p>
+                <p id="get4"></p>
             </div>
         </div>
     </div>

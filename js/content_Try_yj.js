@@ -29,4 +29,9 @@ $(function() {
     $("#gCity").click(function() {
         $("#get3").text("City value: " + $("#city").val());
     });
+
+    $("#gAll").click(function() { // for문 이용 - 배열
+        var result = $("#allForm").find('form[name=allForm]').val();
+        $("#get4").text("All value: " + result);
+    });
 });

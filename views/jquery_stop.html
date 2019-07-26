@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
 
+=======
+>>>>>>> 70b74d1bf42cc57802a1de3000be6cf5d23c591e
 <head>
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -12,33 +15,38 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <script>
-        $(document).ready(function () {
-            $("#bt2").click(function () {
-                var div = $("div");
-                div.animate({ left: '300px' }, "slow");
-//                div.animate({ fontSize: '3em' }, "slow");
-            });
-            $("#bt").click(function(){
-                $("div").stop();
-            });
-        });
-    </script>
+    <title>Stop</title>
     <style>
-        div {
-            background: #98bf21;
-            height: 100px;
-            width: 200px;
-            position: absolute;
+        #panel, #flip {
+            padding: 5px;
+            font-size: 18px;
+            text-align: center;
+            background: #555;
+            color: #fff;
+            border: 1px solid #666;
+            border-radius: 3px;
+        }
+
+        #panel {
+            padding: 50px;
+            display: none; /* 처음에 시작했을 때 가려놓고 시작 */
         }
     </style>
 </head>
-
 <body>
-    <button id="bt2">Start Animation</button>
-    <button id="bt">stop</button>
-    <div>HELLO</div>
-</body>
+    <button id="stop">Stop sliding</button>
+    <div id="flip">Click to slide down panel</div>
+    <div id="panel">Hello world!!</div>
 
+    <script>
+        $(document).ready(function() { 
+            $("#flip").click(function() {
+                $("#panel").slideDown(5000);
+            });
+            $("#stop").click(function() {
+                $("#panel").stop();
+            });
+        });
+    </script>
+</body>
 </html>

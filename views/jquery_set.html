@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <title>Content - Set</title>
+</head>
+<body>
+    <p id="test1">This is a paragraph.</p>
+    <p id="test2">This is another paragraph.</p>
+    <p>Input field: <input type="text" id="test3" value="Mickey Mouse"></p>
+    <button id="btn1">Set Text</button>
+    <button id="btn2">Set HTML</button>
+    <button id="btn3">Set Value</button>
+    <button id="na">naver</button>
+    <p>
+        <a href="https://www.naver.com" id="naver">Naver</a>
+    </p>
+    <br><br>
+    <p><a href="www.google.com" title="some" id="yoju">Yojulab.com</a></p>
+    <button id="btn4">Change href and title</button>
+    <button id="btn5">Remove div element</button>
+
+    <script>
+        $(function() {
+            $("#btn1").click(function() {
+                $("#test1").text("Hello World!");
+            });
+            $("#btn2").click(function() {
+                $("#test2").html("<b>Hello World!</b>");
+            });
+            $("#btn3").click(function() {
+                $("#test3").val("Dolly Duck");
+            });
+            $("#na").click(function() {
+                console.log("Attribute: " + $("#naver").attr("href"));
+            }) ;
+
+            $("#btn4").click(function() {
+                $("#yoju").attr({ // Object 입력 가능
+                    "href" : "www.yojulab.com/jquery",
+                    "title" : "jQuery Tutorial"
+                    });
+            });
+            $("#btn5").click(function() {
+                $("#btn5").click(function() {
+                    $("p").remove();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

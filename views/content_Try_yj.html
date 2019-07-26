@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="../js/content_Try_yj.js"></script>
+    <title>Content Try</title>
+    <style>
+        .wrapper {
+            width: 100%;
+        }
+
+        .try {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="try">
+            <button class="btn btn-light" id="discovery">Discovery</button>
+            <button class="btn btn-light" id="atlantis">Atlantis</button>
+            <button class="btn btn-light" id="endeavour">Endeavour</button>
+            <p id="set1"><b>Note: </b>Click the above buttons to set the value of following input box.</p>
+            <p id="set2"><b>Note: </b>Click the above buttons to set the value of following input box.</p>
+        </div>
+        <div class="try">
+            <input type="checkbox" name="chk" /> Arduino <br>
+            <input type="checkbox" name="chk" /> Android <br>
+            <input type="checkbox" name="chk" /> AI <br>
+            <input type="checkbox" name="chk" /> Bid Data <br>
+            <button class="btn btn-light" id="btnToggle">All Check Toggle</button>
+        </div>
+        <div class="try">
+            <form action="">
+                <table>
+                    <tr>
+                        <th>Name: </th>
+                        <td>
+                            <input type="text" id="name" class="form-control" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Comment: </th>
+                        <td>
+                            <textarea cols="30" rows="10" id="comment" class="form-control">Hello, World!</textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>City: </th>
+                        <td>
+                            <select id="city" class="form-control">
+                                <option id="aris">Paris</option>
+                                <option id="london">London</option>
+                                <option id="newyork">NewYork</option>
+                                <option id="souel">Souel</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <p>
+                <b>Note: </b>Fill the above form and click the follwing button to get the value.
+            </p>
+            <button class="btn btn-light" id="gName">Get Name</button>
+            <button class="btn btn-light" id="gComment">Get Comment</button>
+            <button class="btn btn-light" id="gCity">Get City</button>
+
+            <div id="get">
+                <p id="get1"></p>
+                <p id="get2"></p>
+                <p id="get3"></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

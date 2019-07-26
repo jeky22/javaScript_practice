@@ -11,7 +11,16 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Animation</title>
+
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var div = $("div");
+                div.animate({ left: '100px' }, "slow");
+                div.animate({ fontSize: '3em' }, "slow");
+            });
+        });
+    </script>
     <style>
         div {
             background: #98bf21;
@@ -21,22 +30,10 @@
         }
     </style>
 </head>
+
 <body>
     <button>Start Animation</button>
-    <div>Hello</div>
-
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                var div = $('div');
-                div.animate({
-                    left: '100px'
-                }, "slow");
-                div.animate({
-                    fontSize: '3em'
-                }, "slow");
-            });
-        });
-    </script>
+    <div>HELLO</div>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -13,7 +14,8 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Slide</title>
     <style>
-        #panel, #flip {
+        #panel,
+        #flip {
             padding: 5px;
             text-align: center;
             background-color: #e5eecc;
@@ -25,18 +27,19 @@
             display: none;
         }
     </style>
-</head>
-<body>
-    <div id="flip">Click to slide down panel</div>
-    <div id="panel">Hello world!</div>
-
     <script>
-        $(function() {
-            $("#flip").click(function() {
-                $("#panel").slideToggle("slow");
-                // $("#panel").css("color", "red").slideDown(2000).slideUp(2000);
+        $(function () {
+            $("#flip").click(function () {
+                //$("#panel").slideToggle("slow");
+                $("#panel").slideDown(2000).slideUp(2000).css("color", "red");
             });
         });
     </script>
+</head>
+
+<body>
+    <div id="flip">Click to slide down panel</div>
+    <div id="panel">Hello world!</div>
 </body>
+
 </html>

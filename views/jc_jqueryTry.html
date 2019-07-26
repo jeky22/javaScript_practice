@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script>
+        $(document).ready(function () {
+            $("#bt2").click(function () {
+                var img = $("img");
+                img.animate({ left: '50px' }, "slow");
+                img.animate({ top: '50px' }, "slow");
+                img.animate({ left: '0' }, "slow");
+                img.animate({ top: '0' }, "slow");
+                //div.animate({ fontSize: '3em' }, "slow");
+            });
+            $("#bt").click(function () {
+                $("img").stop();
+            });
+        });
+    </script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <img class="col-5" src="./images/image.jpg" alt="sample">
+        </div>
+        <div class="mt-5 row justify-content-center">
+            <button class="btn btn-primary m-2" id="bt2">Start Animation</button>
+            <button class="btn btn-primary m-2" id="bt">stop</button>
+        </div>
+    </div>
+</body>
+
+</html>

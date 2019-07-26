@@ -24,7 +24,10 @@ router.get('/jc_cookieTry', function (req, res) {
     res.sendFile(path.join(__dirname + '/views/jc_cookieTry.html'));
     //__dirname : It will resolve to your project folder.
 });
-
+router.get('/jc_jqueryTry', function (req, res) {
+    res.sendFile(path.join(__dirname + '/views/jc_jqueryTry.html'));
+    //__dirname : It will resolve to your project folder.
+});
 
 router.get('/join', function (req, res) {
     console.log(req.query);

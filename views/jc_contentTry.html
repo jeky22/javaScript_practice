@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container row">
+        <div class="col-10">
+            <div>
+                <button class="btn border" id="dis">Discovery</button>
+                <button class="btn border" id="atl">Atlantis</button>
+                <button class="btn border" id="end">Endeavour</button>
+                <p id="txt1">Click the above buttons to set the value of following input box.</p>
+                <p id="txt2">Click the above buttons to set the value of following input box.</p>
+            </div>
+            <div>
+                <p>
+                    Name: <input class="set_val" type="text" id="Name">
+                </p>
+                <p>
+                    Comment: <textarea class="set_val" id="Commmemt"></textarea>
+                </p>
+                <p>
+                    City: <select class="set_val"  id="City">
+                        <option value="Paris">Paris</option>
+                        <option value="Korea">Korea</option>
+                    </select>
+                </p>
+                <p> <button class="btn border" id="btn_name">Get Name</button>
+                    <button class="btn border" id="btn_cmt">Get Comment</button>
+                    <button class="btn border" id="btn_city">Get City</button></p>
+                <p id="txt3"></p>
+
+            </div>
+        </div>
+        <div class="col-2">
+            <p><input class="chk" type="checkbox" name="Arduino" id="check1">
+                <label for="check1"> Arduino </label></p>
+            <p><input class="chk" type="checkbox" name="Android" id="check2">
+                <label for="check2"> Android </label></p>
+            <p><input class="chk" type="checkbox" name="AI" id="check3">
+                <label for="check3"> AI </label></p>
+            <p><input class="chk" type="checkbox" name="Big_Data" id="check4">
+                <label for="check4"> Big_Data </label></p>
+            <p><button class="btn btn-primary" id="chk_btn">All Check Toggle</button></p>
+        </div>
+
+    </div>
+
+
+    <script>
+        $(function () {
+
+            $("#dis").click(function () {
+                $("#txt1").text("");
+            });
+
+            $("#atl").click(function () {
+                $("#txt1").text($("#txt2").text());
+            });
+
+            $("#end").click(function () {
+                $("#txt1").text($("#txt1").text()+" "+$("#txt2").text());
+
+            });
+
+            $("#btn_name").click(function () {
+               var arr= $(".set_val");
+               var txt="";
+               for (a of arr){
+                   txt+= a.id+", ";
+               }
+               $("#txt3").text(txt);
+            });
+            
+            $("#btn_cmt").click(function (){
+               var arr= $(".set_val");
+               var txt="";
+               for (a of arr){
+                   txt+= a.id+": "+a.value+", ";
+               }
+               $("#txt3").text(txt);
+            });
+
+            $("#btn_city").click(function () {
+                $("#txt3").text($("#City").val());
+            });
+
+
+            $("#chk_btn").click(function () {
+                var arr = $(".chk");
+                for (chkval of arr) {
+                    chkval.checked = !(chkval.checked);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

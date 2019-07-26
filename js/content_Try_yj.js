@@ -12,10 +12,9 @@ $(function() {
 
     // --------------------------------------------------------------------------------------------------------
     // try2
-    // 체크 박스 모두 체크
-    $("#btnToggle").click(function() {
-        $("input[name=chk]:checkbox").each(function() {
-            $(this).attr("checked", true);
+    $('#btnToggle').click(function(){
+        $('input:checkbox').prop('checked',function(){
+            return !$(this).prop('checked');
         });
     });
 

@@ -47,6 +47,46 @@
         });
     </script>
 
+    <!-- <p>
+        <h4>Input focus:</h4> 
+        <input type="text" id="yellow" />
+        <p>If you are focus here, the background color of this input box will be yellow!</p>
+    </p>
+    <p>
+        <h4>:empty</h4>
+        <table border="1" border-collapse: collapse style="border: 1px solid #ddd;">
+            <tr>
+                <th>Company</th>
+                <th></th>
+                <th>Country</th>
+            </tr>
+            <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Berglunds snabbokip</td>
+                <td></td>
+                <td>Sweden</td>
+            </tr>
+        </table>
+    </p>
+    <p>
+        <h4>:checkbox wrap</h4>
+        <input type="checkbox" />
+        <input type="checkbox" />
+        <input type="checkbox" />
+    </p>
+
+    <script>
+        $().ready(function() {
+            $("#yellow").focus();
+            $(":focus").css("background-color", "yellow");
+            $(":empty").css("background-color", "yellow");
+            $(":checkbox").wrap("<span style='background-color: red;'>")
+        });
+    </script> -->
 </body>
 
 </html>
